@@ -6,7 +6,7 @@ services:
       - 8080:80
       - 8043:443
     volumes:
-      - ./php:/var/www/html
+      - ./php:/var/www/html/rest
   dbserver:
     image: mysql:5.7
     volumes:
