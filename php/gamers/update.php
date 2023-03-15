@@ -9,7 +9,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // include database and object files
 include_once '../config/db.php';
-include_once '../object/gamer.php';
+include_once '../object/Gamer.php';
 
 $database = new Db();
 $db = $database->getConnection();
@@ -20,12 +20,11 @@ $gamer = new Gamer($db);
 // get posted data
 $data = json_decode(file_get_contents("php://input", true));
 
-// set ID property of department to be updated
+// set ID property of gamer to be updated
 $gamer->id = $data->id;
-// set department property value
 $gamer->nickname = $data->nickname;
 $gamer->age = $data->age;
-$gamer->level = $data->nickname;
+$gamer->level = $data->level;
 
 // update the department
 if ($gamer->update()) {

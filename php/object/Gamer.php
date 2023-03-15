@@ -40,17 +40,15 @@ class Gamer
     function create()
     {
         // query to insert record
-        $query = "INSERT INTO " . $this->table_name . " SET id=:id, nickname=:nickname, age=:age, level=:level";
+        $query = "INSERT INTO " . $this->table_name . " SET  nickname=:nickname, age=:age, level=:level";
         // prepare query
         $stmt = $this->conn->prepare($query);
         // sanitize
-        $this->id = htmlspecialchars(strip_tags($this->id));
         $this->nickname = htmlspecialchars(strip_tags($this->nickname));
         $this->age = htmlspecialchars(strip_tags($this->age));
         $this->level = htmlspecialchars(strip_tags($this->level));
 
         // bind values
-        $stmt->bindParam(":id", $this->id);
         $stmt->bindParam(":nickname", $this->nickname);
         $stmt->bindParam(":age", $this->age);
         $stmt->bindParam(":level", $this->level);
@@ -67,7 +65,7 @@ class Gamer
     function update()
     {
         // update query
-        $query = "UPDATE" . $this->table_name . " SET nickname = :nickname, age=:age, level=:level WHERE id = :id";
+        $query = "UPDATE " . $this->table_name . " SET nickname=:nickname, age=:age, level=:level WHERE id=:id";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
