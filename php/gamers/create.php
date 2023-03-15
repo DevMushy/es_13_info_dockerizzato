@@ -15,7 +15,7 @@ $database = new Db();
 $db = $database->getConnection();
 
 // initialize object
-$gamer = new gamers($db);
+$gamer = new Gamer($db);
 
 // get posted data
 $data = json_decode(file_get_contents("php://input", true));

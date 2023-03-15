@@ -15,7 +15,7 @@ $database = new Db();
 $db = $database->getConnection();
 
 // initialize object
-$gamer = new gamers($db);
+$gamer = new Gamer($db);
 
 // get posted data
 $data = json_decode(file_get_contents("php://input", true));
@@ -24,6 +24,8 @@ $data = json_decode(file_get_contents("php://input", true));
 $gamer->id = $data->id;
 // set department property value
 $gamer->nickname = $data->nickname;
+$gamer->age = $data->age;
+$gamer->level = $data->nickname;
 
 // update the department
 if ($gamer->update()) {

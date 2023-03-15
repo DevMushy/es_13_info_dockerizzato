@@ -16,7 +16,7 @@ $database = new Db();
 $db = $database->getConnection();
 
 // initialize object
-$gamer = new gamers($db);
+$gamer = new Gamer($db);
 
 // set ID property of department to be deleted
 $gamer->id = filter_input(INPUT_GET, 'id');

@@ -5,7 +5,7 @@
  *
  * @author https://roytuts.com
  */
-class Department
+class Gamer
 {
 
     // database connection and table name

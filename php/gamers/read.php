@@ -13,7 +13,7 @@ $database = new Db();
 $db = $database->getConnection();
 
 // initialize object
-$gamer = new gamers($db);
+$gamer = new Gamer($db);
 
 // query department
 $stmt = $gamer->read();
@@ -31,8 +31,8 @@ if ($num > 0) {
         extract($row);
         $gamer_item = array(
             "id" => $row['id'],
-            "nickname" => $row['nickname']
-            "age" => $row['age']
+            "nickname" => $row['nickname'],
+            "age" => $row['age'],
             "level" => $row['level']
         );
         array_push($gamer_arr["records"], $gamer_item);
